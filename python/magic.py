@@ -18,6 +18,11 @@ user_name = os.getlogin();
 print("Hello,", user_name + "! How are you?")
 password = input("Enter Password:")
 
-
 # TODO check the password and compare then give access
-# and then get the string and print some dynamic text
+user_name = [johnson, amalraj, unknown, guest]
+password = [@Jmht5rdx, $amalraj, $unknown, @guest]
+
+# for user_check in user_name
+# # print some dynamic text from user input
+
+

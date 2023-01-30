@@ -1,0 +1,5 @@
+account_sid = 'ACd8b6a6e90d1bb5c744deb193b0befd74'
+auth_token  = 'f654cad0f0053cb8f95b0b27f34c8b2c'
+my_number   = '+918778121492'
+twilio_num  = '+13347217807'
+my_msg      = 'Working Fine'
