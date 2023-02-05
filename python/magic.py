@@ -1,5 +1,9 @@
- # Need to implement some magic operation
- # Like some dynamic printing
+# ---------------------------------
+# Program Description
+#   1. 
+#   2.  
+#   3.  
+# ---------------------------------
 
 # ---------------------------------
 # Import required packages 
@@ -9,20 +13,44 @@ import os
 # ---------------------------------
 # Variable Declaration
 # ---------------------------------
-user_name = os.getlogin(); 
-# str.upper(user_name)
+get_user_name = input("Enter user name:")
+get_password  = input("Enter Password:")
+
+# get_user_name = os.getlogin(); 
+# str.upper(get_user_name)
+
+# ---------------------------------
+# user name and password DB
+# ---------------------------------
+user_name_db = ["johnson", "amalraj", "unknown", "guest"]
+password_db = {'johnson':"@Jmht5rdx", 'amalraj':"$amalraj", 'unknown':"$unknown", 'guest':"@guest"}
+
+# ---------------------------------
+# Define a validate user name function
+# ---------------------------------
+def magic_text():
+    get_text = input("Enter text:")
+
+# ---------------------------------
+# Define a validate user name
+# ---------------------------------
+def validate_user_name():
+
+  for user_name in user_name_db:
+    if (get_user_name == user_name):
+        if (password_db.get(user_name) == get_password):
+          print("Hello,", user_name + "! How are you?")
+          magic_text()
+          break
+        else:
+          print("Sorry! password not matched")    
+          break
+    else:
+      # print("Sorry! User name not matched")    
+      continue 
 
 # ---------------------------------
 # Main Program
 # ---------------------------------
-print("Hello,", user_name + "! How are you?")
-password = input("Enter Password:")
-
-# TODO check the password and compare then give access
-user_name = [johnson, amalraj, unknown, guest]
-password = [@Jmht5rdx, $amalraj, $unknown, @guest]
-
-# for user_check in user_name
-# # print some dynamic text from user input
-
-
+# call the function to check the user name and password 
+validate_user_name()
