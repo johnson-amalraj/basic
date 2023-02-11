@@ -3,7 +3,7 @@
 # Example [1,2,3]
 # We can have anything inside the list [1,2,"John",'john',True,False]
 # [] its a Empty list
-# Lsit was defined as Collection of all data types
+# List was defined as Collection of all data types
 
 l1 = [1,2,3]
 l2 = [1,2,2.5,"John",'john',True,False,l1]
