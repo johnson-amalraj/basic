@@ -8,55 +8,48 @@
 # ---------------------------------
 # Import required packages 
 # ---------------------------------
-import os
-import tkinter as tk
-from tkinter import ttk
-import tkinter.font as tkFont
-import numpy as np
-import time
+import getpass
 
 # ---------------------------------
 # Variable Declaration
 # ---------------------------------
-# get_user_name = input("Enter user name:")
-
-# get_user_name = os.getlogin(); 
+get_user_name = input("Enter user name:")
 # str.upper(get_user_name)
 
 # ---------------------------------
 # user name and password DB
 # ---------------------------------
-# user_name_db = ["johnson", "amalraj", "unknown", "guest"]
-# password_db = {'johnson':"@Jmht5rdx", 'amalraj':"$amalraj", 'unknown':"$unknown", 'guest':"@guest"}
+user_name_db = ["johnson", "amalraj", "unknown", "guest"]
+password_dic = {'johnson':"@Jmht5rdx", 'amalraj':"Amalraj", 'unknown':"#unKnown", 'guest':"@guest"}
 
 # ---------------------------------
-# Define a validate user name function
+# Define a function to check the credentials 
 # ---------------------------------
-def magic_text():
-    get_text = input("Enter text:")
+def credential_check():
 
-# ---------------------------------
-# Define a validate user name
-# ---------------------------------
-# def validate_user_name():
-# 
-#   for user_name in user_name_db:
-#     if (get_user_name == user_name):
-#         get_password  = input("Enter Password:")
-#         if (password_db.get(user_name) == get_password):
-#           print("Hello,", user_name + "! How are you?")
-#           magic_text()
-#           break
-#         else:
-#           print("Sorry! password not matched")    
-#           break
-#     else:
-#       print("Sorry! User name not matched")    
-#       break
+  user_found = 0;
+  pswd_found = 0;
+
+  for user_name in user_name_db:
+    if (get_user_name == user_name):
+      user_found = 1;
+      print("Hey,", get_user_name + "! Enter your Password:")
+      if (password_dic.get(user_name) == getpass.getpass(prompt="")):
+        pswd_found = 1;
+        break
+      # else:
+      #   break
+    # else:
+
+  if (user_found != 1):
+    print("Sorry!,", get_user_name + "! not found")    
+  elif (pswd_found != 1):
+    print("Sorry! password not matched")    
+  else:
+    print("Hello,", get_user_name + "! How are you?")
 
 # ---------------------------------
 # Main Program
 # ---------------------------------
 # call the function to check the user name and password 
-# validate_user_name()
-magic_text()
+credential_check()
