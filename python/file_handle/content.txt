@@ -1,3 +1,2 @@
-you can learn python
-its easy 
-start today
+first line overrides
+new lines appended
