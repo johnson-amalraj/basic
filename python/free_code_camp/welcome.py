@@ -39,7 +39,7 @@ def print_org_msg(message):
      else: 
        print(' ', end = '')
        # print(message)
-       # TODO correct the message print with format
+       # TODO: correct the message print with format
 
 #--------------------------------------------------
 # definition of main function
