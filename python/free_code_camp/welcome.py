@@ -38,7 +38,7 @@ def print_org_msg(message):
        print(logger)
      else: 
        print(' ', end = '')
-       # print(message)
+       # print(message) DEBUG: debug this print method
        # TODO: correct the message print with format
 
 #--------------------------------------------------
