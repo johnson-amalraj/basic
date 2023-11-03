@@ -9,8 +9,8 @@ from typing       import Final
 from telegram     import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
-# TODO
-TOKEN        : Final = '6599267499:AAHDQKzpNyItKtCQOP1uNXmW2zIBUS_tVo8'
+# TODO Need to add the TOLEN ID below
+TOKEN        : Final = ''
 BOT_USERNAME : Final = '@man_chat_bot'
 
 # Commands
