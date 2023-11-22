@@ -2,7 +2,7 @@ from tkinter import *
 
 # Create the main window
 root = Tk()
-root.title("To-Do List")
+root.title("ToDo List")
 
 # Create a list to store the tasks
 tasks = []
@@ -28,9 +28,9 @@ def update_listbox():
 
 # Create the input box and add button
 task_input = Entry(root, width=30)
-task_input.pack(side=LEFT, padx=10)
+task_input.pack(side=RIGHT, padx=30)
 add_button = Button(root, text="Add", command=add_task)
-add_button.pack(side=LEFT)
+add_button.pack(side=RIGHT)
 
 # Create the task listbox and remove button
 task_listbox = Listbox(root, width=50)
