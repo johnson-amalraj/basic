@@ -1,6 +1,12 @@
 import include
 
-proj_name   = str(input("Enter the project name: ")) # Variable for proj name
+proj_name = str(input("Enter the project name: ")) # Variable for proj name
 
 # Create directory tree with a depth of 1 and maximum 3 children per directory
-include.create_directory_tree(proj_name, 1, 3)
+include.create_dir_struct(proj_name, 1, 3)
+
+# Create files inside the each folder
+include.create_files(proj_name)
+
+# Print tree command output
+include.print_dir_struct("tree")
