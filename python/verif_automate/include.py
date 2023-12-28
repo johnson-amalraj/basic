@@ -69,7 +69,7 @@ def create_tb_folder_files (proj_name):
 
   # tb folder files
   directory_path = f'{proj_name}/tb'
-  file_names     = ['top.sv', 'interface.sv', 'env.sv', 'checker.sv', 'base_test.sv', 'common_sequence', 'mst_agent.sv', 'mst_driver.sv', 'mst_sequencer.sv', 'mst_monitor.sv', 'slv_agent.sv', 'slv_driver.sv', 'slv_sequencer.sv', 'slv_monitor.sv']
+  file_names     = ['top.sv', 'interface.sv', 'env.sv', 'checker.sv', 'base_test.sv', 'common_sequence.sv', 'mst_agent.sv', 'mst_driver.sv', 'mst_sequencer.sv', 'mst_monitor.sv', 'slv_agent.sv', 'slv_driver.sv', 'slv_sequencer.sv', 'slv_monitor.sv']
 
   for file_name in file_names:
     create_file_in_directory(proj_name, directory_path, file_name)

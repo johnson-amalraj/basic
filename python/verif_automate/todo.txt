@@ -1,0 +1,2 @@
+Need to open each files and print some valid content
+Need to control the sim directory files
