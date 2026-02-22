@@ -1,12 +1,12 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""              
-"              
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""               
+"               
 "               ██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
 "               ██║   ██║██║████╗ ████║██╔══██╗██╔════╝
-"               ██║   ██║██║██╔████╔██║██████╔╝██║    
-"               ╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║    
+"               ██║   ██║██║██╔████╔██║██████╔╝██║     
+"               ╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║     
 "                ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
 "                 ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
-"              
+"               
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""              
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""              
@@ -172,6 +172,10 @@ filetype plugin indent on
 "----------------------------
 " LSP Configuration
 "----------------------------
+
+" Use svls if:
+" You prefer a language server written in Rust.
+" You are looking for a straightforward SystemVerilog language server.
 if executable('svls')
   au User lsp_setup call lsp#register_server({
       \ 'name': 'svls',
@@ -180,8 +184,19 @@ if executable('svls')
       \ })
 endif
 
-" systemverilog filetype
-autocmd BufRead,BufNewFile *.sv set filetype=systemverilog
+" Use verible-verilog-ls if:
+" You want additional tools and features provided by the Verible suite.
+" You are interested in code formatting and other advanced features.
+ if executable('verible-verilog-ls')
+   au User lsp_setup call lsp#register_server({
+       \ 'name': 'verible-verilog-ls',
+       \ 'cmd': {server_info->['verible-verilog-ls']},
+       \ 'whitelist': ['systemverilog']
+       \ })
+ endif
+
+" " systemverilog filetype
+" autocmd BufRead,BufNewFile *.sv set filetype=systemverilog
 
 "----------------------------
 " Snippet Integration
@@ -198,14 +213,6 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Enable completion using asyncomplete
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-
-if executable('verible-verilog-ls')
-  au User lsp_setup call lsp#register_server({
-      \ 'name': 'verible-verilog-ls',
-      \ 'cmd': {server_info->['verible-verilog-ls']},
-      \ 'whitelist': ['systemverilog']
-      \ })
-endif
 
 " ========== Rainbow Parentheses ==========
 let g:rainbow_active = 1
@@ -246,6 +253,22 @@ call plug#begin('~/.vim/plugged')
 
   " Linting & Diagonositics TODO Need to explore this
   Plug 'dense-analysis/ale'
+
+  " UltiSnips configured
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+
+  " Matchit: For better code navigation in SystemVerilog, consider:
+  Plug 'tmhedberg/matchit'
+
+  " Tagbar: For code structure navigation:
+  Plug 'preservim/tagbar'
+
+  " Supertab: For tab-based completion:
+  Plug 'ervandew/supertab'
+
+  " Indent Guides: Visualize indentation levels:
+  Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
